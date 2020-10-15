@@ -32,6 +32,23 @@ const icon = L.icon({
 L.marker([-16.728913,-43.880132], { icon })
 .addTo(map)
 
-function selectImage(event){
-    console.log(event.currentTarget)
+function selectImage(event) {
+    
+    const button = event.currentTarget
+
+    /*  remover tidas as classes .active */
+    const buttons = document.querySelectorAll(".images button")
+    buttons.forEach((button) => {
+        button.classList.remove("active")
+    })
+
+    /* selecionar a imagem clicada */
+    const image = button.children[0]
+    const imageContainer = document.querySelector('.orphanage-details > img')
+
+    /* Atualizar o content da imagem  */
+    imageContainer.src = image.src
+
+    /* adicionar a classe .active para este botao */
+    button.classList.add("active")
 }
