@@ -52,7 +52,8 @@
 
             <div class="map-container">
               <div id="mapid"></div>
-
+                <input type="hidden" name="lat">
+                <input type="hidden" name="lng">
               <footer>
                 <a href="#" id="select-point">
                   Clique no mapa para adicionar a localização
@@ -69,12 +70,12 @@
               <label for="about"
                 >Sobre <span>Máximo de 300 caracteres</span></label
               >
-              <textarea id="about" name="about"></textarea>
+              <textarea id="about" name="about" required ></textarea>
             </div>
 
             <div class="input-block">
               <label for="whatsapp">Numero de Whatsapp</label>
-              <input id="whatsapp" name="whatsapp" />
+              <input id="whatsapp" name="whatsapp" required />
             </div>
 
             <div class="input-block images">
@@ -82,7 +83,7 @@
               <div class="images-upload" id="images">
 
                 <div class="new-upload">
-                  <input name="images" placeholder="Cole o link da foto aqui" />
+                  <input name="images" placeholder="Cole o link da foto aqui" required/>
                   <span>
                     <img src="./public/images/remove-file.svg" alt="Remover Foto">
                   </span>
@@ -92,7 +93,7 @@
               </div>
 
               
-              <button type="button">
+              <button onclick="addPhotoField()" type="button">
                 <img src="./public/images/add-file.svg" alt="Nova Imagem" />
               </button>
             </div>
@@ -108,7 +109,7 @@
 
             <div class="input-block">
               <label for="opening_hours">Horário das Visitas </label>
-              <input id="opening_hours" name="opening_hours" />
+              <input id="opening_hours" name="opening_hours" required />
             </div>
 
             <div class="input-block">
@@ -118,6 +119,7 @@
                 id="open_on_weekends"
                 name="open_on_weekends"
                 value="1"
+                required
               />
 
               <div class="button-select"> 
