@@ -6,11 +6,12 @@ const options = {
     scrollWheelZoom: false,
     zoomControl: false,
 }
+//get values from html options
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
 
 /* MAPA */
-
-
-const map = L.map('mapid', options).setView([-16.728913,-43.880132], 15)
+const map = L.map('mapid', options).setView([lat,lng], 15)
 
 /* CREATE AND ADD TILELAYER */
 
@@ -24,12 +25,9 @@ const icon = L.icon({
     iconAnchor: [29, 68],
     popupAnchor: [170, 2]
 })
-
-
-
 /* CREATE AND ADD MARKER */
 
-L.marker([-16.728913,-43.880132], { icon })
+L.marker([lat, lng], { icon })
 .addTo(map)
 
 function selectImage(event) {
